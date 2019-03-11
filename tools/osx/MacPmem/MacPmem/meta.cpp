@@ -174,10 +174,10 @@ static inline unsigned pmem_metaroom(pmem_meta_t *meta) {
 
         // If we're here it's highly likely the kernel will panic soon.
         // Let's preempt that by blowing up sooner rather than later.
-        panic(("BUFFER OVERFLOW DETECTED: Meta %p is of size %u, of which %lu"
-               "is the base struct, and it contains %d records of combined size"
-               "of %u, meaning %u bytes have been written past allocated"
-               "memory."),
+        panic((BUFFER OVERFLOW DETECTED: Meta %p is of size %u, of which %lu
+               is the base struct, and it contains %d records of combined size
+               of %u, meaning %u bytes have been written past allocated
+               memory.),
               meta, meta->size, sizeof(pmem_meta_t), meta->record_count,
               meta->records_end, -room);
 
